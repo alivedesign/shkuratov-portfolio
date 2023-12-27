@@ -20,7 +20,7 @@ export const Companies: FC<Props> = () => {
     <div className={styles.root}>
       <div className="container">
         <h2 className={styles.title}>
-          Сотрудничал с более, чем <mark>30 крупными компаниями</mark> по всему миру
+          Сотрудничал с более чем <mark>30 крупными компаниями</mark> по всему миру
         </h2>
         <ul className={styles.elements}>
           <li className={styles.element}>

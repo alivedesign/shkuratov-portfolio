@@ -33,7 +33,7 @@ export const Klondike: FC<Props> = () => {
                     <p className={styles.text}>HR-агенства</p>
                   </li>
                   <li className={styles.element}>
-                    <p className={cn(styles.text, styles.textAccent)}>Рекрутёры</p>
+                    <p className={cn(styles.text, styles.textAccent)}>Рекрутеры</p>
                   </li>
                   <li className={styles.element}>
                     <p className={cn(styles.text, styles.textAccent)}>Заказы и вакансии</p>
