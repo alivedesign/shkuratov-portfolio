@@ -16,7 +16,7 @@ export const Keys: FC<Props> = () => {
         <Label className={styles.label} iconColor="white" center>
           Портфолио
         </Label>
-        <h2 className={styles.title}>Решение бизнес задач c&nbsp;фокусом на результат</h2>
+        <h2 className={styles.title}>Решение бизнес-задач c&nbsp;фокусом на результат</h2>
         <div className={styles.inner}>
           <div className={styles.box}>
             <div className={styles.img}>
