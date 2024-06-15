@@ -1,0 +1,63 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+  display: flex;
+  gap: 24px;
+
+  @include min-media($md) {
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 40px 48px;
+    border: 1px solid var(--Stroke-primary, #505050);
+    border-radius: var(--Spacing-Space-2, 8px);
+  }
+
+  @include media($md) {
+    flex-direction: column;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include media($md) {
+    flex-direction: row;
+    gap: 8px;
+  }
+}
+
+.item {
+  max-width: 180px;
+  width: 100%;
+
+  @include media($sm) {
+    max-width: 100%;
+  }
+}
+
+.subtitle {
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: var(--Text-colors-Primary, #fff);
+  @include media($sm) {
+    font-size: 24px;
+  }
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--Text-colors-Tetriary, #999);
+}
+
+.title {
+  max-width: 537px;
+  width: 100%;
+  min-height: 235px;
+}

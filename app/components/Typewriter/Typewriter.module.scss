@@ -1,0 +1,44 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.title {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: var(--Text-colors-Tetriary, #999);
+
+  @include media($sm) {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  mark {
+    color: var(--Text-colors-Primary, #fff);
+  }
+
+  a {
+    color: var(--Text-colors-Primary, #fff);
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+
+  &.primary {
+    color: var(--Text-colors-Secondary, #ccc);
+  }
+}
+
+h1.title,
+h2.title {
+  @include media($sm) {
+    font-size: 24px;
+  }
+}
+
+h3.title,
+h4.title {
+  @include media($sm) {
+    font-size: 18px;
+  }
+}

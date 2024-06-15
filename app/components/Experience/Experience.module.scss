@@ -1,0 +1,94 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.title {
+  margin-bottom: 48px;
+
+  @include min-media($sm) {
+    height: 141px;
+    max-width: 547px;
+  }
+
+  @include media($sm) {
+    margin-bottom: 40px;
+  }
+}
+
+.elements {
+  @include media($sm) {
+    display: flex;
+    overflow: auto;
+    gap: 20px;
+  }
+}
+
+.element {
+  @include min-media($sm) {
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    gap: 64px;
+  }
+
+  @include media($sm) {
+    display: flex;
+    flex-direction: column;
+    min-width: 285px;
+    gap: 16px;
+  }
+
+  &:not(:last-child) {
+    @include min-media($sm) {
+      border-bottom: 1px solid var(--Stroke-primary, #505050);
+    }
+  }
+}
+
+.block {
+  &:first-child {
+    @include min-media($sm) {
+      min-width: 258px;
+    }
+  }
+}
+
+.subtitle {
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #fff;
+
+  @include media($sm) {
+    font-size: 16px;
+  }
+
+  mark {
+    color: var(--Text-colors-Tetriary, #999);
+  }
+
+  &Icon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--Text-colors-Tetriary, #999);
+  gap: 4px;
+}
+
+.items {
+  display: flex;
+  gap: 8px;
+}
+
+.item {
+
+}

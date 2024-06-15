@@ -1,0 +1,13 @@
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "core/reset";
+@import "core/global";
+
+:root {
+  --Text-colors-Secondary: #ccc;
+  --Text-colors-Tetriary: #999;
+  --Text-colors-Primary: #fff;
+  --Button-backgrounds-Primary: #fff;
+  --Stroke-secondary: #282828;
+  --Stroke-primary: #505050;
+}
