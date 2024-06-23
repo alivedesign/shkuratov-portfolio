@@ -25,7 +25,7 @@ export const Contact = () => {
           </a>
         </li>
       </ul>
-      <Typewriter Component="h3" className={styles.title}>
+      <Typewriter Component="h4" className={styles.title}>
         Passionate about enhancing education? Reach me at <a href={SOCIAL_LINKS.EMAIL}>ShkuratovDesigner@gmail.com</a>
       </Typewriter>
     </footer>

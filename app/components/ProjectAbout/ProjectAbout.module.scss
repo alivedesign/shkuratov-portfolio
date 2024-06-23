@@ -1,2 +1,339 @@
 @import "app/styles/helpers/variables";
 @import "app/styles/helpers/mixins";
+
+.root {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: var(--Spacing-Space-2, 8px);
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    @include min-media($lg) {
+      &.cc {
+        background-color: #fff;
+      }
+
+      &.em {
+        background-color: #e3e3e3;
+      }
+
+      &.tg {
+        background-image: url("#{$path-img}project/tg/bg.svg");
+        background-color: #fff;
+
+        @include media($lg) {
+          background-image: none;
+        }
+      }
+
+      &.ivr {
+        background-color: #ffdf67;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 0%, rgba(11, 11, 11, 0.8) 100%);
+  transition: opacity 0.3s, transform 0.3s;
+  inset: 0;
+
+  @include media($lg) {
+    display: none;
+  }
+
+  .root:hover & {
+    @include min-media($lg) {
+      opacity: 1;
+    }
+  }
+}
+
+.wrap {
+  position: relative;
+  margin-bottom: 24px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--Spacing-Space-2, 8px);
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  @include media($sm) {
+    margin-bottom: 12px;
+  }
+
+  &.cc {
+    background-color: #fff;
+
+    .img {
+      border-radius: var(--Spacing-Space-1, 4px);
+    }
+
+    .img1 {
+      left: 95px;
+      top: 234px;
+      z-index: 1;
+      box-shadow:
+        -54px 77px 26px 0 rgba(110, 110, 110, 0),
+        -35px 49px 24px 0 rgba(110, 110, 110, 0.01),
+        -20px 28px 20px 0 rgba(110, 110, 110, 0.05),
+        -9px 12px 15px 0 rgba(110, 110, 110, 0.09),
+        -2px 3px 8px 0 rgba(110, 110, 110, 0.1);
+
+      @include media($sm) {
+        left: -8px;
+        top: auto;
+        bottom: -16px;
+        width: 89px;
+      }
+    }
+
+    .img2 {
+      left: 50%;
+      top: 40px;
+      transform: translateX(-50%);
+
+      @include media($sm) {
+        top: 32px;
+        width: 265px;
+      }
+    }
+
+    .img3 {
+      right: 88px;
+      top: 24px;
+      z-index: 1;
+      box-shadow:
+        -87px 85px 34px 0 rgba(112, 112, 112, 0),
+        -55px 55px 31px 0 rgba(112, 112, 112, 0.01),
+        -31px 31px 26px 0 rgba(112, 112, 112, 0.05),
+        -14px 14px 19px 0 rgba(112, 112, 112, 0.09),
+        -3px 3px 11px 0 rgba(112, 112, 112, 0.1);
+
+      @include media($sm) {
+        right: -16px;
+        top: 16px;
+        width: 123px;
+      }
+    }
+  }
+
+  &.em {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e3e3e3;
+
+    @include media($sm) {
+      align-items: baseline;
+      padding-top: 16px;
+      padding-right: 22px;
+      padding-left: 22px;
+    }
+
+    .img1 {
+      position: relative;
+    }
+  }
+
+  &.tg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    gap: 32px;
+
+    @include media($sm) {
+      align-items: baseline;
+      padding-top: 14px;
+      padding-right: 22px;
+      padding-left: 22px;
+    }
+
+    @include min-media($lg) {
+      background-image: url("#{$path-img}project/tg/bg.svg");
+    }
+
+    .img {
+      position: relative;
+
+      @include media($sm) {
+        width: 125px;
+      }
+    }
+
+    .root:hover & {
+      @include min-media($lg) {
+        background-image: none;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &.ivr {
+    background-color: #ffdf67;
+
+    &.sm {
+      .img1 {
+        left: -8px;
+        top: 193px;
+        z-index: 1;
+        width: 114px;
+        border-radius: 6px;
+
+        @include media($sm) {
+          left: -18px;
+          top: auto;
+          bottom: 12px;
+          width: 85px;
+        }
+      }
+
+      .img2 {
+        left: 50%;
+        top: 50%;
+        width: 395px;
+        border-radius: var(--Spacing-Space-2, 8px);
+        transform: translate(-50%, -50%);
+
+        @include media($sm) {
+          top: 24px;
+          width: 277px;
+          transform: translateX(-50%);
+        }
+      }
+
+      .img3 {
+        right: -22px;
+        top: 50px;
+        z-index: 1;
+        width: 126px;
+        border-radius: 5px;
+
+        @include media($sm) {
+          right: -16px;
+          top: 12px;
+          width: 95px;
+        }
+      }
+    }
+
+    &.xl {
+      .img1 {
+        left: 48px;
+        top: 174px;
+        z-index: 1;
+        border-radius: 6px;
+
+        @include media($sm) {
+          left: -18px;
+          top: auto;
+          bottom: 12px;
+          width: 85px;
+        }
+      }
+
+      .img2 {
+        left: 50%;
+        top: 50px;
+        border-radius: var(--Spacing-Space-2, 8px);
+        transform: translateX(-50%);
+
+        @include media($sm) {
+          top: 24px;
+          width: 277px;
+        }
+      }
+
+      .img3 {
+        right: 48px;
+        top: 24px;
+        z-index: 1;
+        border-radius: 5px;
+
+        @include media($sm) {
+          right: -16px;
+          top: 12px;
+          width: 95px;
+        }
+      }
+    }
+  }
+
+  &.sm {
+    height: 360px;
+
+    @include media($sm) {
+      height: 180px;
+    }
+  }
+
+  &.xl {
+    height: 400px;
+
+    @include media($sm) {
+      height: 180px;
+    }
+  }
+}
+
+.img {
+  position: absolute;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--Text-colors-Secondary, #ccc);
+
+  @include media($sm) {
+    font-size: 16px;
+  }
+
+  mark {
+    color: var(--Text-colors-Primary, #fff);
+  }
+
+  .root:hover & {
+    @include min-media($lg) {
+      opacity: 0;
+    }
+  }
+}
+
+.descr {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--Text-colors-Secondary, #ccc);
+
+  mark {
+    color: var(--Text-colors-Primary, #fff);
+  }
+
+  &.sm {
+    padding: 24px 20px;
+  }
+
+  &.xl {
+    padding: 32px 38px;
+  }
+
+  .root:hover & {
+    @include min-media($lg) {
+      opacity: 1;
+    }
+  }
+}

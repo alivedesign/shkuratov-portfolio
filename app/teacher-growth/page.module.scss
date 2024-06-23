@@ -1,2 +1,10 @@
 @import "app/styles/helpers/variables";
 @import "app/styles/helpers/mixins";
+
+.title {
+  max-width: 650px;
+
+  @include min-media($md) {
+    min-height: 94px;
+  }
+}

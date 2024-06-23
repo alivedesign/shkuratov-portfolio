@@ -1,0 +1,22 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.row {
+  display: flex;
+  gap: 44px;
+
+  @include media($lg) {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  > * {
+    width: 100%;
+  }
+}

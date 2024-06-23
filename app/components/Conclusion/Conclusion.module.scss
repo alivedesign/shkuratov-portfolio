@@ -1,0 +1,55 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.title {
+  margin-bottom: 40px;
+}
+
+.items {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include media($md) {
+    grid-gap: 16px 20px;
+  }
+
+  @include media($sm) {
+    grid-template-columns: repeat(2, 285px);
+    overflow-x: auto;
+  }
+}
+
+.item {
+  padding: 24px;
+  border: 1px solid var(--Stroke-primary, #505050);
+  border-radius: var(--Spacing-Space-2, 8px);
+
+  @include media($md) {
+    padding: 16px;
+    border-radius: var(--Spacing-Space-1, 4px);
+  }
+}
+
+.img {
+  margin-bottom: 16px;
+
+  @include media($md) {
+    margin-bottom: 12px;
+  }
+}
+
+.text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--Text-colors-Secondary, #ccc);
+
+  @include media($sm) {
+    font-size: 16px;
+  }
+
+  mark {
+    color: var(--Button-backgrounds-Primary, #fff);
+  }
+}

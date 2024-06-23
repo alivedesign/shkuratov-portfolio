@@ -20,13 +20,13 @@
     display: flex;
     gap: 44px;
 
-    > * {
-      width: 100%;
-    }
-
     @include media($lg) {
       flex-direction: column;
       gap: 56px;
+    }
+
+    > * {
+      width: 100%;
     }
   }
 }

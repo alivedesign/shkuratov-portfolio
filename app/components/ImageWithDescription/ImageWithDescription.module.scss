@@ -1,0 +1,27 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+
+}
+
+.image {
+  margin-bottom: 20px;
+  border-radius: var(--Spacing-Space-2, 8px);
+}
+
+.text {
+  max-width: 542px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--Text-colors-Secondary, #ccc);
+
+  @include media($sm) {
+    font-size: 16px;
+  }
+
+  mark {
+    color: var(--Text-colors-Primary, #fff);
+  }
+}

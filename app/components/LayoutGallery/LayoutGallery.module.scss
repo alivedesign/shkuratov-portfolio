@@ -1,0 +1,44 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include media($sm) {
+    gap: 16px;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 24px;
+
+  @include media($lg) {
+    gap: 8px;
+  }
+
+  > * {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.cell {
+  &.onMobile {
+    @include min-media($sm) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &.onDesktop {
+    @include media($sm) {
+      display: none;
+    }
+  }
+}

@@ -47,13 +47,13 @@ export const Experience = () => {
             <ul className={styles.items}>
               <li className={styles.item}>
                 <p className={styles.text}>
-                  <Image src="/icons/company/softmoc.png" width={16} height={18} alt="SoftMoc" />
+                  <Image src="/images/company/softmoc.png" width={16} height={18} alt="SoftMoc" />
                   SoftMoc
                 </p>
               </li>
               <li className={styles.item}>
                 <p className={styles.text}>
-                  <Image src="/icons/company/toysfortotscanada.png" width={22} height={22} alt="toysfortotscanada" />
+                  <Image src="/images/company/toysfortotscanada.png" width={22} height={22} alt="toysfortotscanada" />
                   toysfortotscanada
                 </p>
               </li>

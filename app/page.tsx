@@ -11,17 +11,17 @@ export default function Page() {
         <Experience />
       </Layout.Row>
       <Layout.Row>
-        <ProjectAbout type="COURSE_CONSTRUCTOR" />
+        <ProjectAbout variant="COURSE_CONSTRUCTOR" size="xl" />
       </Layout.Row>
       <Layout.Row flex>
-        <ProjectAbout type="EDU_MARKETPLACE" />
-        <ProjectAbout type="TEACHER_GROWTH" />
+        <ProjectAbout variant="EDU_MARKETPLACE" />
+        <ProjectAbout variant="TEACHER_GROWTH" />
       </Layout.Row>
       <Layout.Row>
         <About />
       </Layout.Row>
       <Layout.Row>
-        <ProjectAbout type="IVR_PLATFORM" />
+        <ProjectAbout variant="IVR_PLATFORM" size="xl" />
       </Layout.Row>
       <Layout.Row>
         <Contact />

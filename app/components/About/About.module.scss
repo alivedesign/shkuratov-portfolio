@@ -30,8 +30,8 @@
 }
 
 .item {
-  max-width: 180px;
   width: 100%;
+  max-width: 180px;
 
   @include media($sm) {
     max-width: 100%;
@@ -44,6 +44,7 @@
   font-size: 36px;
   line-height: 130%;
   color: var(--Text-colors-Primary, #fff);
+
   @include media($sm) {
     font-size: 24px;
   }
@@ -57,7 +58,10 @@
 }
 
 .title {
-  max-width: 537px;
   width: 100%;
-  min-height: 235px;
+  max-width: 537px;
+
+  @include min-media($sm) {
+    min-height: 235px;
+  }
 }
