@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import styles from './Navbar.module.scss';
 import Link from 'next/link';
@@ -31,6 +31,17 @@ export const Navbar: FC<Props> = () => {
       </Link>
     );
   };
+
+  useEffect(() => {
+    if (isOpenBurger) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isOpenBurger]);
 
   return (
     <>
@@ -71,7 +82,7 @@ export const Navbar: FC<Props> = () => {
               </Link>
             </li>
             <li className={styles.item}>
-              <Link className={styles.link} href="#contacts">
+              <Link className={styles.link} onClick={handleLinkClick} href="#contacts">
                 Contacts
               </Link>
             </li>
@@ -89,7 +100,7 @@ export const Navbar: FC<Props> = () => {
           </a>
         </div>
       </div>
-      <div className={styles.mobileMenu}>
+      <div className={cn(styles.mobileMenu, { [styles.mobileMenuOpen]: isOpenBurger })}>
         <div className={cn('container', styles.mobileMenuWrap)}>
           <Link href={APP_URLs.HOME} className={styles.logo}>
             <Image src="/images/logo.svg" width={38} height={38} alt="Logo" />

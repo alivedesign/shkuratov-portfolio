@@ -8,50 +8,6 @@
   border-radius: var(--Spacing-Space-2, 8px);
   background-position: top center;
   background-repeat: no-repeat;
-
-  &:hover {
-    @include min-media($lg) {
-      &.cc {
-        background-color: #fff;
-      }
-
-      &.em {
-        background-color: #e3e3e3;
-      }
-
-      &.tg {
-        background-image: url("#{$path-img}project/tg/bg.svg");
-        background-color: #fff;
-
-        @include media($lg) {
-          background-image: none;
-        }
-      }
-
-      &.ivr {
-        background-color: #ffdf67;
-      }
-    }
-  }
-}
-
-.overlay {
-  position: absolute;
-  z-index: 2;
-  opacity: 0;
-  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 0%, rgba(11, 11, 11, 0.8) 100%);
-  transition: opacity 0.3s, transform 0.3s;
-  inset: 0;
-
-  @include media($lg) {
-    display: none;
-  }
-
-  .root:hover & {
-    @include min-media($lg) {
-      opacity: 1;
-    }
-  }
 }
 
 .wrap {
@@ -164,13 +120,6 @@
 
       @include media($sm) {
         width: 125px;
-      }
-    }
-
-    .root:hover & {
-      @include min-media($lg) {
-        background-image: none;
-        background-color: transparent;
       }
     }
   }
@@ -287,53 +236,46 @@
 }
 
 .text {
+  position: relative;
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
   color: var(--Text-colors-Secondary, #ccc);
+  transition: padding-left 0.3s, color 0.3s;
 
   @include media($sm) {
     font-size: 16px;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 3.5v1h6.295L3 12.795l.705.705L12 5.205V11.5h1v-8H5z' fill='%23fff'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    transition: width 0.3s, height 0.3s;
+  }
+
   mark {
     color: var(--Text-colors-Primary, #fff);
   }
 
   .root:hover & {
-    @include min-media($lg) {
-      opacity: 0;
-    }
-  }
-}
+    @include min-media($md) {
+      padding-left: 28px;
+      text-decoration-line: underline;
+      color: #fff;
 
-.descr {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  opacity: 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  color: var(--Text-colors-Secondary, #ccc);
-
-  mark {
-    color: var(--Text-colors-Primary, #fff);
-  }
-
-  &.sm {
-    padding: 24px 20px;
-  }
-
-  &.xl {
-    padding: 32px 38px;
-  }
-
-  .root:hover & {
-    @include min-media($lg) {
-      opacity: 1;
+      &::before {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }

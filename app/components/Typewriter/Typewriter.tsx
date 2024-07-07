@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, ReactNode, isValidElement, memo } from 'react';
+import React, { FC, ReactNode, isValidElement, memo, useEffect, useState } from 'react';
 import { ReactTyped } from 'react-typed';
 import cn from 'classnames';
 import styles from './Typewriter.module.scss';
@@ -11,6 +11,8 @@ interface Props {
   className?: string;
   speed?: number;
 }
+
+const isBrowser = () => typeof window !== 'undefined';
 
 const renderChildrenToString = (children: ReactNode): string => {
   if (typeof children === 'string') {
@@ -31,16 +33,32 @@ const renderChildrenToString = (children: ReactNode): string => {
   }
 };
 
-export const Typewriter: FC<Props> = memo(({ children, className, speed = 1, variant, Component = 'h3' }) => {
+export const Typewriter: FC<Props> = memo(({ children, className, speed = 10, variant, Component = 'h3' }) => {
   const text = renderChildrenToString(children);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const appearances = {
     [styles.primary]: variant === 'primary',
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  if (!isBrowser()) return;
+
   return (
     <Component className={cn(styles.title, className, appearances)}>
-      <ReactTyped startWhenVisible strings={[text]} typeSpeed={speed} showCursor={false} />
+      {isMobile ? children : <ReactTyped startWhenVisible strings={[text]} typeSpeed={speed} showCursor={false} />}
     </Component>
   );
 });

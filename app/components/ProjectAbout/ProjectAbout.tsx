@@ -55,7 +55,6 @@ export const ProjectAbout: FC<Props> = ({ variant, size = 'sm' }) => {
   };
   return (
     <Link className={cn(styles.root, appearances)} href={APP_URLs[variant]}>
-      <div className={styles.overlay} />
       <div className={cn(styles.wrap, appearances, sizeVariant)}>
         {variant === 'COURSE_CONSTRUCTOR' && (
           <>
@@ -138,7 +137,6 @@ export const ProjectAbout: FC<Props> = ({ variant, size = 'sm' }) => {
         )}
       </div>
       <p className={styles.text}>{getTextContent(variant)}</p>
-      <p className={cn(styles.descr, sizeVariant)}>{getTextContent(variant)}</p>
     </Link>
   );
 };
