@@ -12,6 +12,18 @@
     line-height: 1.4;
   }
 
+  &Mobile {
+    @include min-media($sm) {
+      display: none;
+    }
+  }
+
+  &Desktop {
+    @include media($sm) {
+      display: none;
+    }
+  }
+
   mark {
     color: var(--Text-colors-Primary, #fff);
   }

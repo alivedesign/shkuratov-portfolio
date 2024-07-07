@@ -35,31 +35,18 @@ const renderChildrenToString = (children: ReactNode): string => {
 
 export const Typewriter: FC<Props> = memo(({ children, className, speed = 10, variant, Component = 'h3' }) => {
   const text = renderChildrenToString(children);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const appearances = {
     [styles.primary]: variant === 'primary',
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  if (!isBrowser()) return;
-
   return (
-    <Component className={cn(styles.title, className, appearances)}>
-      {isMobile ? children : <ReactTyped startWhenVisible strings={[text]} typeSpeed={speed} showCursor={false} />}
-    </Component>
+    <>
+      <Component className={cn(styles.title, styles.titleMobile, className, appearances)}>{children}</Component>
+      <Component className={cn(styles.title, styles.titleDesktop, className, appearances)}>
+        <ReactTyped startWhenVisible strings={[text]} typeSpeed={speed} showCursor={false} />
+      </Component>
+    </>
   );
 });
 
