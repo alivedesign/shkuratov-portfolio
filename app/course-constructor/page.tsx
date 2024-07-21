@@ -10,6 +10,8 @@ import { HeroLanding } from '@/app/components/HeroLanding/HeroLanding';
 import { ImageWithDescription } from '@/app/components/ImageWithDescription/ImageWithDescription';
 import { LayoutGallery } from '@/app/components/LayoutGallery/LayoutGallery';
 import Image from 'next/image';
+import { StatisticsResult } from '@/app/components/StatisticsResult/StatisticsResult';
+import { Stats } from '@/app/course-constructor/components/Stats/Stats';
 
 export default function Page() {
   return (
@@ -202,7 +204,20 @@ export default function Page() {
           </LayoutGallery.Row>
         </LayoutGallery>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <StatisticsResult
+          title={
+            <>
+              <span>50%</span> <mark>-&gt; 75%</mark>
+            </>
+          }
+          text={
+            <>
+              <mark>Task success rate</mark> after the new usability tests
+            </>
+          }
+        />
+      </Layout.Row>
       <Layout.Row>
         <LayoutGallery>
           <LayoutGallery.Row>
@@ -226,7 +241,9 @@ export default function Page() {
           </LayoutGallery.Row>
         </LayoutGallery>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <Stats />
+      </Layout.Row>
       <Layout.Row>
         <LayoutGallery>
           <LayoutGallery.Row>

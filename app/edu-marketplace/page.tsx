@@ -8,6 +8,10 @@ import { Conclusion } from '@/app/components/Conclusion/Conclusion';
 import { HeroLanding } from '@/app/components/HeroLanding/HeroLanding';
 import { LayoutGallery } from '@/app/components/LayoutGallery/LayoutGallery';
 import Image from 'next/image';
+import { StatisticsResult } from '@/app/components/StatisticsResult/StatisticsResult';
+import styles from '@/app/components/Conclusion/Conclusion.module.scss';
+import React from 'react';
+import { Stats } from '@/app/edu-marketplace/components/Stats/Stats';
 
 export default function Page() {
   return (
@@ -129,7 +133,9 @@ export default function Page() {
           </LayoutGallery.Row>
         </LayoutGallery>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <Stats />
+      </Layout.Row>
       <Layout.Row>
         <LayoutGallery>
           <LayoutGallery.Row>
@@ -236,7 +242,16 @@ export default function Page() {
           </LayoutGallery.Row>
         </LayoutGallery>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <StatisticsResult
+          subtitle={
+            <>
+              Result <mark>-&gt; a&nbsp;5% increase</mark> in&nbsp;our north star metric,{' '}
+              <mark>revenue per page view.</mark>
+            </>
+          }
+        />
+      </Layout.Row>
       <Layout.Row>
         <Paragraph maxWidth={560}>
           <p>

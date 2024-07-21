@@ -8,6 +8,8 @@ import { Inference } from '@/app/components/Inference/Inference';
 import { HeroLanding } from '@/app/components/HeroLanding/HeroLanding';
 import { LayoutGallery } from '@/app/components/LayoutGallery/LayoutGallery';
 import Image from 'next/image';
+import { RoadMap } from '@/app/ivr-platform/components/RoadMap/RoadMap';
+import { Stickers } from '@/app/ivr-platform/components/Stickers/Stickers';
 
 export default function Page() {
   return (
@@ -36,7 +38,9 @@ export default function Page() {
           </p>
         </Paragraph>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <RoadMap />
+      </Layout.Row>
       <Layout.Row>
         <Paragraph maxWidth={542}>
           <p>
@@ -59,7 +63,9 @@ export default function Page() {
           </p>
         </Paragraph>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <Stickers />
+      </Layout.Row>
       <Layout.Row>
         <Paragraph maxWidth={542}>
           <p>

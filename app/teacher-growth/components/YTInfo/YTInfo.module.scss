@@ -1,0 +1,52 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+
+  @include media($md) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+
+.img {
+}
+
+.info {
+  width: 100%;
+
+  @include min-media($md) {
+    max-width: 462px;
+  }
+}
+
+.title {
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: var(--Button-backgrounds-Primary, #fff);
+
+  @include media($sm) {
+    margin-bottom: 8px;
+  }
+}
+
+.text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  color: var(--Text-colors-Secondary, #ccc);
+
+  @include media($sm) {
+    font-size: 18px;
+  }
+
+  mark {
+    color: var(--Text-colors-Primary, #fff);
+  }
+}

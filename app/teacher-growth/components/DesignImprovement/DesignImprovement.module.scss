@@ -1,0 +1,52 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+  position: relative;
+  padding-top: 102px;
+
+  @include media($sm) {
+    padding-top: 0;
+  }
+}
+
+.line {
+  position: absolute;
+  right: 103px;
+  top: 0;
+
+  @include media($md) {
+    right: 50px;
+  }
+
+  @include media($sm) {
+    display: none;
+  }
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  gap: 130px;
+
+  @include media($sm) {
+    gap: 32px;
+  }
+}
+
+.item {
+
+}
+
+.text {
+  margin-top: 16px;
+  max-width: 218px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--Text-colors-Secondary, #ccc);
+
+  @include min-media($sm) {
+    display: none;
+  }
+}

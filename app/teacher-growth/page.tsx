@@ -10,6 +10,8 @@ import { Inference } from '@/app/components/Inference/Inference';
 import styles from './page.module.scss';
 import { LayoutGallery } from '@/app/components/LayoutGallery/LayoutGallery';
 import Image from 'next/image';
+import { YTInfo } from '@/app/teacher-growth/components/YTInfo/YTInfo';
+import { DesignImprovement } from '@/app/teacher-growth/components/DesignImprovement/DesignImprovement';
 
 export default function Page() {
   return (
@@ -34,7 +36,9 @@ export default function Page() {
           </p>
         </Paragraph>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <YTInfo />
+      </Layout.Row>
       <Layout.Row>
         <LayoutGallery>
           <LayoutGallery.Row>
@@ -109,7 +113,25 @@ export default function Page() {
           </p>
         </Paragraph>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <LayoutGallery>
+          <LayoutGallery.Row onDesktop>
+            <LayoutGallery.Cell>
+              <Image src="/images/teacher-growth/block-8-1-desktop.png" width={900} height={160} alt="" />
+            </LayoutGallery.Cell>
+          </LayoutGallery.Row>
+          <LayoutGallery.Row onDesktop>
+            <LayoutGallery.Cell>
+              <Image src="/images/teacher-growth/block-8-2-desktop.png" width={900} height={160} alt="" />
+            </LayoutGallery.Cell>
+          </LayoutGallery.Row>
+          <LayoutGallery.Row onMobile>
+            <LayoutGallery.Cell>
+              <Image src="/images/teacher-growth/block-8-1-mobile.png" width={641} height={958} alt="" />
+            </LayoutGallery.Cell>
+          </LayoutGallery.Row>
+        </LayoutGallery>
+      </Layout.Row>
       <Layout.Row>
         <Paragraph maxWidth={483}>
           <p>
@@ -170,7 +192,9 @@ export default function Page() {
           </LayoutGallery.Row>
         </LayoutGallery>
       </Layout.Row>
-      <Layout.Row></Layout.Row>
+      <Layout.Row>
+        <DesignImprovement />
+      </Layout.Row>
       <Layout.Row>
         <Inference>
           <mark>I&nbsp;noticed a&nbsp;problem</mark> in&nbsp;the market and couldn&rsquo;t find a&nbsp;solution.{' '}
