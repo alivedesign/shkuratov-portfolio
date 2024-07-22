@@ -33,8 +33,7 @@
 
   &:nth-child(even) {
     @include media($sm) {
-
-    margin-left: auto;
+      margin-left: auto;
     }
   }
 
@@ -59,7 +58,6 @@
   &:nth-child(4) {
     @include media($sm) {
       margin-bottom: -112px;
-
     }
   }
 }

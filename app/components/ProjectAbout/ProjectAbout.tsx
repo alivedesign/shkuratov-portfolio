@@ -42,7 +42,7 @@ export const ProjectAbout: FC<Props> = ({ variant, size = 'sm' }) => {
       case 'TEACHER_GROWTH':
         return (
           <>
-            <mark>A Mobile App Concept</mark> Featuring Online Courses Created by Teachers
+            <mark>A Mobile App Concept</mark> Featuring Online Courses&nbsp;Created by Teachers
           </>
         );
       case 'IVR_PLATFORM':

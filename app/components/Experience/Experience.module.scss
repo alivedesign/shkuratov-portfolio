@@ -82,6 +82,13 @@
   line-height: 160%;
   color: var(--Text-colors-Tetriary, #999);
   gap: 4px;
+
+  &:hover {
+    span {
+      text-decoration-line: underline;
+      color: #fff;
+    }
+  }
 }
 
 .items {

@@ -46,16 +46,16 @@ export const Experience = () => {
             <p className={styles.subtitle}>Work with</p>
             <ul className={styles.items}>
               <li className={styles.item}>
-                <p className={styles.text}>
+                <a className={styles.text} href="https://softmoc.com/ca" target="_blank" rel="noopener">
                   <Image src="/images/company/softmoc.png" width={16} height={18} alt="SoftMoc" />
-                  SoftMoc
-                </p>
+                  <span>SoftMoc</span>
+                </a>
               </li>
               <li className={styles.item}>
-                <p className={styles.text}>
+                <a className={styles.text} href="https://www.toysfortotscanada.com/" target="_blank" rel="noopener">
                   <Image src="/images/company/toysfortotscanada.png" width={22} height={22} alt="toysfortotscanada" />
-                  toysfortotscanada
-                </p>
+                  <span>toysfortotscanada</span>
+                </a>
               </li>
             </ul>
           </div>
