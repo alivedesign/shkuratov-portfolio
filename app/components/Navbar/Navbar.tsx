@@ -8,6 +8,7 @@ import { APP_URLs } from '@/app/constants/appUrls';
 import { SOCIAL_LINKS } from '@/app/constants/socialLinks';
 import cn from 'classnames';
 import { usePathname } from 'next/navigation';
+import { HoverImageWrapper } from '@/app/components/HoverImageWrapper/HoverImageWrapper';
 
 type Props = {};
 
@@ -56,20 +57,28 @@ export const Navbar: FC<Props> = () => {
               <p className={styles.text}>Works</p>
               <ul className={styles.elements}>
                 <li className={styles.element}>
-                  {createLinkItem(
-                    APP_URLs.COURSE_CONSTRUCTOR,
-                    'Course Constructor',
-                    cn(styles.link, styles.linkPrimary)
-                  )}
+                  <HoverImageWrapper imageUrl="/images/HoverImageWrapper/CourseConstructor.gif">
+                    {createLinkItem(
+                      APP_URLs.COURSE_CONSTRUCTOR,
+                      'Course Constructor',
+                      cn(styles.link, styles.linkPrimary)
+                    )}
+                  </HoverImageWrapper>
                 </li>
                 <li className={styles.element}>
-                  {createLinkItem(APP_URLs.EDU_MARKETPLACE, 'Edu Marketplace', cn(styles.link, styles.linkPrimary))}
+                  <HoverImageWrapper imageUrl="/images/HoverImageWrapper/EduMarketplace.gif">
+                    {createLinkItem(APP_URLs.EDU_MARKETPLACE, 'Edu Marketplace', cn(styles.link, styles.linkPrimary))}
+                  </HoverImageWrapper>
                 </li>
                 <li className={styles.element}>
-                  {createLinkItem(APP_URLs.TEACHER_GROWTH, 'TeacherGrowth', cn(styles.link, styles.linkPrimary))}
+                  <HoverImageWrapper imageUrl="/images/HoverImageWrapper/Teachergrowth.gif">
+                    {createLinkItem(APP_URLs.TEACHER_GROWTH, 'TeacherGrowth', cn(styles.link, styles.linkPrimary))}
+                  </HoverImageWrapper>
                 </li>
                 <li className={styles.element}>
-                  {createLinkItem(APP_URLs.IVR_PLATFORM, 'IVR Platform', cn(styles.link, styles.linkPrimary))}
+                  <HoverImageWrapper imageUrl="/images/HoverImageWrapper/IVRplatform.gif">
+                    {createLinkItem(APP_URLs.IVR_PLATFORM, 'IVR Platform', cn(styles.link, styles.linkPrimary))}
+                  </HoverImageWrapper>
                 </li>
               </ul>
             </li>
