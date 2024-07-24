@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import cn from 'classnames';
 import Image from 'next/image';
@@ -5,6 +6,7 @@ import Image from 'next/image';
 import { Typewriter } from '@/app/components/Typewriter/Typewriter';
 
 import styles from './Experience.module.scss';
+import { HoverImageWrapper } from '@/app/components/HoverImageWrapper/HoverImageWrapper';
 
 export const Experience = () => {
   return (
@@ -14,58 +16,64 @@ export const Experience = () => {
         <mark>EdTech products</mark>
       </Typewriter>
       <ul className={styles.elements}>
-        <li className={styles.element}>
-          <div className={styles.block}>
-            <p className={cn(styles.subtitle, styles.subtitleIcon)}>
-              <Image src="/icons/arrow--up-right.svg" width={18} height={18} alt="Стрелочка" />
-              Reached top-30
-            </p>
-            <p className={styles.text}>edtech company in CIS</p>
-          </div>
-          <div className={styles.block}>
-            <p className={styles.subtitle}>
-              Lead Product Designer <mark>@Infourok.ru</mark>
-            </p>
-            <p className={styles.text}>2023 — 2024</p>
-          </div>
-        </li>
-        <li className={styles.element}>
-          <div className={styles.block}>
-            <p className={styles.subtitle}>+185%</p>
-            <p className={styles.text}>revenue growth</p>
-          </div>
-          <div className={styles.block}>
-            <p className={styles.subtitle}>
-              Senior Product Designer <mark>@Infourok.ru</mark>
-            </p>
-            <p className={styles.text}>2020 — 2023</p>
-          </div>
-        </li>
-        <li className={styles.element}>
-          <div className={styles.block}>
-            <p className={styles.subtitle}>Work with</p>
-            <ul className={styles.items}>
-              <li className={styles.item}>
-                <a className={styles.text} href="https://softmoc.com/ca" target="_blank" rel="noopener">
-                  <Image src="/images/company/softmoc.png" width={16} height={18} alt="SoftMoc" />
-                  <span>SoftMoc</span>
-                </a>
-              </li>
-              <li className={styles.item}>
-                <a className={styles.text} href="https://www.toysfortotscanada.com/" target="_blank" rel="noopener">
-                  <Image src="/images/company/toysfortotscanada.png" width={22} height={22} alt="toysfortotscanada" />
-                  <span>toysfortotscanada</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.block}>
-            <p className={styles.subtitle}>
-              UX/UI Designer <mark>@ITMINT</mark>
-            </p>
-            <p className={styles.text}>2018 — 2019</p>
-          </div>
-        </li>
+        <HoverImageWrapper imageUrl="/images/HoverImageWrapper/main_2.gif">
+          <li className={styles.element}>
+            <div className={styles.block}>
+              <p className={cn(styles.subtitle, styles.subtitleIcon)}>
+                <Image src="/icons/arrow--up-right.svg" width={18} height={18} alt="Стрелочка" />
+                Reached top-30
+              </p>
+              <p className={styles.text}>edtech company in CIS</p>
+            </div>
+            <div className={styles.block}>
+              <p className={styles.subtitle}>
+                Lead Product Designer <mark>@Infourok.ru</mark>
+              </p>
+              <p className={styles.text}>2023 — 2024</p>
+            </div>
+          </li>
+        </HoverImageWrapper>
+        <HoverImageWrapper imageUrl="/images/HoverImageWrapper/main_2.gif">
+          <li className={styles.element}>
+            <div className={styles.block}>
+              <p className={styles.subtitle}>+185%</p>
+              <p className={styles.text}>revenue growth</p>
+            </div>
+            <div className={styles.block}>
+              <p className={styles.subtitle}>
+                Senior Product Designer <mark>@Infourok.ru</mark>
+              </p>
+              <p className={styles.text}>2020 — 2023</p>
+            </div>
+          </li>
+        </HoverImageWrapper>
+        <HoverImageWrapper imageUrl="/images/HoverImageWrapper/main_3.gif">
+          <li className={styles.element}>
+            <div className={styles.block}>
+              <p className={styles.subtitle}>Work with</p>
+              <ul className={styles.items}>
+                <li className={styles.item}>
+                  <a className={styles.text} href="https://softmoc.com/ca" target="_blank" rel="noopener">
+                    <Image src="/images/company/softmoc.png" width={16} height={18} alt="SoftMoc" />
+                    <span>SoftMoc</span>
+                  </a>
+                </li>
+                <li className={styles.item}>
+                  <a className={styles.text} href="https://www.toysfortotscanada.com/" target="_blank" rel="noopener">
+                    <Image src="/images/company/toysfortotscanada.png" width={22} height={22} alt="toysfortotscanada" />
+                    <span>toysfortotscanada</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.block}>
+              <p className={styles.subtitle}>
+                UX/UI Designer <mark>@ITMINT</mark>
+              </p>
+              <p className={styles.text}>2018 — 2019</p>
+            </div>
+          </li>
+        </HoverImageWrapper>
       </ul>
     </section>
   );
