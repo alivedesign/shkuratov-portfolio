@@ -130,7 +130,7 @@ export default function Page() {
       <Layout.Row>
         <Paragraph maxWidth={542}>
           <p>
-            I&#39;ve developed a&nbsp; <mark>design system</mark> comprising over 800 components to{' '}
+            I&#39;ve developed a&nbsp;<mark>design system</mark> comprising over 800 components to{' '}
             <mark>facilitate future growth</mark> and accelerate frontend development
           </p>
         </Paragraph>
