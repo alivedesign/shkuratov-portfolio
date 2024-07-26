@@ -1,0 +1,72 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+
+  @include media($sm) {
+    gap: 40px;
+  }
+}
+
+.title {
+  @include media($lg) {
+    min-height: auto;
+  }
+
+  @include min-media($md) {
+    min-height: 94px;
+    max-width: 552px;
+  }
+}
+
+.player {
+
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+
+  @include media($md) {
+    overflow-x: auto;
+  }
+}
+
+.item {
+  width: 100%;
+
+  @include min-media($sm) {
+    min-width: 218px;
+    max-width: 218px;
+  }
+}
+
+.count {
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  white-space: nowrap;
+  color: var(--Text-colors-Primary, #fff);
+
+  @include media($sm) {
+    margin-bottom: 4px;
+    font-size: 24px;
+  }
+}
+
+.text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  white-space: nowrap;
+  color: var(--Text-colors-Tetriary, #999);
+
+  @include media($sm) {
+    font-size: 16px;
+  }
+}

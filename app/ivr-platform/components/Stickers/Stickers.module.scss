@@ -1,0 +1,100 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+}
+
+.items {
+  @include media($lg) {
+    gap: 0;
+  }
+
+  @include min-media($sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 26px;
+  }
+
+  @include media($sm) {
+    margin-right: -40px;
+    margin-left: -40px;
+  }
+}
+
+.item {
+  @include min-media($sm) {
+    width: 282px;
+  }
+
+  @include media($sm) {
+    width: fit-content;
+  }
+
+  &:nth-child(even) {
+    @include media($sm) {
+      margin-left: auto;
+    }
+  }
+
+  &:nth-child(1) {
+    @include media($sm) {
+      margin-bottom: -129px;
+    }
+  }
+
+  &:nth-child(2) {
+    @include media($sm) {
+      margin-bottom: -79px;
+    }
+  }
+
+  &:nth-child(3) {
+    @include media($sm) {
+      margin-bottom: -76px;
+    }
+  }
+
+  &:nth-child(4) {
+    @include media($sm) {
+      margin-bottom: -112px;
+    }
+  }
+}
+
+.image {
+  .item:nth-child(1) & {
+    @include media($sm) {
+      width: 205px;
+      height: 205px;
+    }
+  }
+
+  .item:nth-child(2) & {
+    @include media($sm) {
+      width: 232px;
+      height: 232px;
+    }
+  }
+
+  .item:nth-child(3) & {
+    @include media($sm) {
+      width: 242px;
+      height: 242px;
+    }
+  }
+
+  .item:nth-child(4) & {
+    @include media($sm) {
+      width: 239px;
+      height: 239px;
+    }
+  }
+
+  .item:nth-child(5) & {
+    @include media($sm) {
+      width: 238px;
+      height: 238px;
+    }
+  }
+}

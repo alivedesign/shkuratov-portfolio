@@ -1,0 +1,55 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+  padding: 40px 72px;
+  border: 1px solid var(--Stroke-primary, #505050);
+  border-radius: var(--Spacing-Space-2, 8px);
+
+  @include media($md) {
+    padding: 32px;
+  }
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+
+  @include media($md) {
+    flex-direction: column;
+  }
+}
+
+.item {
+
+}
+
+.subtitle {
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  white-space: nowrap;
+  color: var(--Text-Accent, #ffde00);
+
+  @include media($sm) {
+    font-size: 24px;
+  }
+
+  span {
+    text-decoration-line: line-through;
+  }
+}
+
+.text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  white-space: nowrap;
+  color: var(--Text-colors-Secondary, #ccc);
+
+  @include media($sm) {
+    font-size: 16px;
+  }
+}

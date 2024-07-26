@@ -1,0 +1,39 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+  padding: 40px;
+  border: 1px solid #505050;
+  border-radius: var(--Spacing-Space-2, 8px);
+
+  @include media($sm) {
+    padding: 32px;
+  }
+}
+
+.text {
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--Text-colors-Secondary, #ccc);
+
+  @include media($sm) {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  mark {
+    color: var(--Text-colors-Primary, #fff);
+  }
+
+  &Medium {
+    max-width: 657px;
+  }
+
+  &Large {
+    max-width: 718px;
+  }
+}

@@ -1,0 +1,110 @@
+@import "app/styles/helpers/variables";
+@import "app/styles/helpers/mixins";
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 60px;
+  border-top: 1px solid var(--Stroke-primary, #505050);
+  gap: 20px;
+
+  @include media($md) {
+    flex-direction: column;
+  }
+
+  @include media($sm) {
+    padding-top: 20px;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include media($md) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.item {
+}
+
+.link {
+  position: relative;
+  padding-left: 0;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: var(--Text-colors-Tetriary, #999);
+  transition: padding-left 0.3s, color 0.3s;
+
+  @include media($md) {
+    padding-left: 18px;
+    text-decoration-line: underline;
+  }
+
+  @include media($sm) {
+    font-size: 18px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: width 0.3s, height 0.3s;
+
+    @include media($md) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &:hover {
+    @include min-media($md) {
+      padding-left: 28px;
+      text-decoration-line: underline;
+      color: #fff;
+
+      &::before {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &LinkedIn {
+    &::before {
+      background-color: #2a5aa4;
+    }
+  }
+
+  &Telegram {
+    &::before {
+      background-color: #2f89ce;
+    }
+  }
+
+  &Medium {
+    &::before {
+      background-color: #fff;
+    }
+  }
+}
+
+.title {
+  width: 100%;
+
+  @include min-media($md) {
+    min-height: 150px;
+    max-width: 575px;
+  }
+}

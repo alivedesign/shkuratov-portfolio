@@ -1,0 +1,28 @@
+@import "../../../styles/helpers/variables";
+@import "../../../styles/helpers/mixins";
+
+.gap {
+  flex-shrink: 0;
+}
+
+.vertical {
+  display: block;
+  overflow: hidden;
+}
+
+.horizontal {
+  display: inline-block;
+  overflow: hidden;
+}
+
+@each $size in 40 {
+  .vertical.gap[data-gap-size='size-#{$size}'] {
+    height: #{$size}px;
+  }
+}
+
+@each $size in 40 {
+  .horizontal.gap[data-gap-size='size-#{$size}'] {
+    width: #{$size}px;
+  }
+}
